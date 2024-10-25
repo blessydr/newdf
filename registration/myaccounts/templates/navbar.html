@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Navbar Example</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        .navbar-custom {
+            background-color: #007bff; /* Bootstrap primary color */
+            transition: background-color 0.4s ease; /* Smooth transition for navbar background */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #fff; /* White text color for navbar items */
+            transition: color 0.3s ease; /* Smooth transition for link text color */
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffc107; /* Yellow on hover */
+            background-color: transparent; /* No background on hover */
+            transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for both text and background color */
+        }
+
+        /* Optional: transition effect for the entire navbar */
+        .navbar-custom:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height for centering */
+            background-color: #f0f0f0; /* Light background color */
+        }
+        
+        .search-container {
+            display: flex; /* Align items in a row */
+            border-radius: 25px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        
+        .search-input {
+            border: none; /* Remove border */
+            padding: 10px 20px; /* Padding for input */
+            font-size: 16px; /* Font size */
+            outline: none; /* Remove outline */
+            width: 300px; /* Width of the input */
+        }
+        
+        .search-button {
+            background-color: #007bff; /* Button color */
+            border: none; /* Remove border */
+            color: white; /* Text color */
+            padding: 10px 20px; /* Padding for button */
+            cursor: pointer; /* Pointer on hover */
+            font-size: 16px; /* Font size */
+        }
+        
+        .search-button:hover {
+            background-color: #0056b3; /* Darker on hover */
+        }
+        .dropdown-item{
+            color: black;
+        }
+  
+    </style>
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="{% url 'home' %}">My Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form method="GET" action="{% url 'blog_list' %}" class="search-container">
+                    <input type="text" name="search" class="search-input" placeholder="Search...">
+                    <button type="submit" class="search-button">🔍</button>
+                </form>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    User
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                    <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'blog_create' %}" class="nav-link">Create Blog</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Your body content can go here -->
+  
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

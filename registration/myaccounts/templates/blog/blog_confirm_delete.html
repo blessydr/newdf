@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Blog Post</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #dc3545; /* Red color for delete confirmation */
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #dc3545; /* Red button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px; /* Spacing between buttons */
+        }
+        button:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Are you sure you want to delete "{{ blog.title }}"?</h1>
+    <p>This action cannot be undone.</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+        <a href="{% url 'blog_list' %}" class="cancel-btn">Cancel</a>
+    </form>
+</body>
+</html>
+{% endblock content %}

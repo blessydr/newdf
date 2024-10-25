@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <style>
+        body{
+            margin-top:500px;
+        }
+        .limited-text {
+            width:500px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+     
+    </style>
+<body>
+    <div class="container mt-5">
+        <div class="column justify-content-between align-items-center mb-7">
+            <h1 class="text-center">Blog Posts</h1>
+
+        <!-- Blog List -->
+        <ul class="list-group">
+            {% for blog in blogs %}
+                <li class="list-group-item mb-3">
+                    <a href="{% url 'blog_detail' blog.pk %}" class="blog fs-5 fw-bold text-primary">{{ blog.title }}</a> <br>
+                    <small class="text-muted">by {{ blog.author }}</small>
+                    <p style=" text-align: right; padding: 5px">Posted {{ blog.date_posted|timesince }} ago</p>
+                    <p class="limited-text mt-2">{{ blog.content }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div> </div>
+</body>
+{% endblock content %}

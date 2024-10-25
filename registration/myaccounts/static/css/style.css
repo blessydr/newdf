@@ -1,0 +1,79 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar-brand, .nav-link {
+    color: #fff;
+}
+
+.navbar {
+    background-color: #007bff;
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Container Styling */
+.container {
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Text Styling */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Styling for Buttons */
+a.nav-link, a.dropdown-item {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.nav-link:hover, a.dropdown-item:hover {
+    background-color: #0056b3;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
